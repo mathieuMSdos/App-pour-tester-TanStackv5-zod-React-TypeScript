@@ -1,0 +1,283 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset général */
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* reset textarea  */
+textarea {
+  /* Supprime le redimensionnement */
+  resize: none;
+
+  /* Enlève les bordures par défaut */
+  border: none;
+  outline: none;
+
+  /* Enlève les marges internes et externes */
+  margin: 0;
+  padding: 0;
+
+  /* Réinitialise le style de police */
+  font: inherit;
+  color: inherit;
+
+  /* Réinitialise la taille et la couleur du texte */
+  font-size: 1rem;
+
+  /* Supprime les ombres et styles spécifiques au navigateur */
+  box-shadow: none;
+  background: none;
+
+  /* Réinitialise l'apparence pour les navigateurs webkit */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Reset spécifique pour les inputs de type texte */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"] {
+  border-radius: 0;
+  outline: none;
+  width: 100%;
+}
+
+/* Reset pour les inputs numériques */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Reset pour l'autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Reset pour le placeholder */
+input::placeholder {
+  opacity: 1;
+  color: inherit;
+}
+
+/* Reset pour les inputs de type search */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* Reset pour focus */
+input:focus {
+  outline: none;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(241, 241, 233);
+
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 2rem;
+}
+
+.posts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(104, 95, 77, 0.07);
+  width: 90%;
+  border-radius: 5px;
+  background-color: #5645a113;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.042);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-action-post, .ValidateEdit-Btn-Container {
+  display: flex;
+  justify-content: right;
+  column-gap: 1rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background-color: white;
+}
+
+.editPostTextArea{
+width: 100%;
+background-color: #f5f4f1 ;
+border-radius: 5px;
+padding: 0.5rem;
+}
+
+.createPost-btn {
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  bottom: 1rem;
+  left: 1rem;
+  border-radius: 100px;
+  background-color: rgb(135, 135, 207);
+  font-size: 1.5rem;
+  color: white;
+  transform: scale(1);
+}
+
+.createPost-btn:hover {
+  animation: btnZoom 0.2s ease forwards;
+}
+
+@keyframes btnZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* -------------- MODAL-------------- */
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #141310dc;
+  backdrop-filter: blur(4px);
+  position: fixed;
+}
+.modal-container {
+  position: fixed;
+  width: 50%;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 30%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  background-color: #f9f4e5c5;
+  
+  box-shadow: 1px 1px 10px #22211d1c;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-close-Btn {
+  background-color: unset;
+  padding: 0;
+  font-size: 1.5rem;
+}
+.modal-close-Btn,
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
+  row-gap: 0.5rem;
+}
+
+.modal-container form input {
+  color: rgb(79, 76, 76);
+  background-color: #e7e1d2e1;
+  padding: 0.5rem;
+  border-radius: 50px;
+  width: 40%;
+  font-size: 0.8rem;
+}
+
+.modal-container textarea {
+  
+  color: black;
+  height: fit-content;
+  max-height: 50vh;
+  min-height: 20vh; /* hauteur minimale */
+  width: 100%;
+  overflow-y: auto;
+}
+
+.modal-container textarea::placeholder {
+  color: rgb(79, 76, 76);
+}
+
+.footer-modal {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  row-gap: 2rem;
+}
+hr {
+  border: 1px solid #eae3d2e1;
+}
+.footer-modal button {
+}
