@@ -1,4 +1,4 @@
-# CRUD TanStack Query v5 Demo
+# CRUD pour tester : TanStack Query v5 + zod + Type Script + react
 
 Une application de démonstration implémentant un CRUD basique pour explorer TanStack Query v5 avec React, TypeScript et Zod.
 
