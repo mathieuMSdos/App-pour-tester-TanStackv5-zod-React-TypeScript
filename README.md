@@ -1,4 +1,4 @@
-# CRUD pour tester : TanStack Query v5 + zod + Type Script + react
+# CRUD pour tester rapidement : TanStack Query v5 + zod + Type Script + react
 
 Une application de démonstration implémentant un CRUD basique pour explorer TanStack Query v5 avec React, TypeScript et Zod.
 
@@ -30,17 +30,6 @@ npm run dev        # Lance le serveur de développement
 npm run build      # Build le projet avec TypeScript
 npm run lint       # Lance ESLint
 npm run preview    # Preview de la build
-```
-
-## Structure du Projet
-
-```
-src/
-  ├── components/
-  ├── hooks/
-  ├── schemas/
-  ├── types/
-  └── utils/
 ```
 
 ## Configuration ESLint
