@@ -47,6 +47,7 @@ const Post = ({ post }: PostProps) => {
   const handleDelete = (postId: number) => deleteMutate(postId);
 
   // -----------TANSTACK PATCH
+  // comme on a 2 mutate dans le meme composant on est obligé de donnée des pseudo/alias à chaque élément de TanStack
   const {
     mutate: updateMutate,
     isPending: isUpdatePending,
