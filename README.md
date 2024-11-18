@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# CRUD pour tester rapidement : TanStack Query v5 + zod + Type Script + react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application de démonstration implémentant un CRUD basique pour explorer TanStack Query v5 avec React, TypeScript et Zod.
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18.3.1
+- TypeScript 5.6.2
+- TanStack Query 5.59.20
+- Zod 3.23.8
+- Vite 5.4.10
+- JSON Server 1.0.0-beta.3
+- Axios 1.7.7
 
-## Expanding the ESLint configuration
+## Prérequis
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js
+- npm
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Scripts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev        # Lance le serveur de développement
+npm run build      # Build le projet avec TypeScript
+npm run lint       # Lance ESLint
+npm run preview    # Preview de la build
 ```
+
+## Configuration ESLint
+
+Le projet utilise une configuration ESLint moderne avec :
+- eslint-plugin-react-hooks
+- eslint-plugin-react-refresh
+- typescript-eslint
+
+## Outils de Développement
+
+- React Query DevTools
+- TypeScript en mode strict
+- ESLint v9
+
+## Licence
+
+MIT
